@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-2-thread-1","id":1},{"content":"pool-2-thread-2","id":2},{"content":"pool-2-thread-3","id":3},{"content":"pool-2-thread-4","id":4},{"content":"pool-2-thread-5","id":5}];
+var items = [{"id":1,"group":1,"content":"automationapi\/serverest\/features\/create-users[1:8]","start":1764279522419,"end":1764279523901,"title":"automationapi\/serverest\/features\/create-users[1:8] 16:38:42.419-16:38:43.901 Create User with email invalid"},{"id":2,"group":2,"content":"automationapi\/serverest\/features\/create-users[2:26]","start":1764279522419,"end":1764279523901,"title":"automationapi\/serverest\/features\/create-users[2:26] 16:38:42.419-16:38:43.901 Create User"},{"id":3,"group":3,"content":"automationapi\/serverest\/features\/delete-users[1:7]","start":1764279522419,"end":1764279524794,"title":"automationapi\/serverest\/features\/delete-users[1:7] 16:38:42.419-16:38:44.794 Delete User Success"},{"id":4,"group":4,"content":"automationapi\/serverest\/features\/get-users[1:8]","start":1764279522419,"end":1764279524318,"title":"automationapi\/serverest\/features\/get-users[1:8] 16:38:42.419-16:38:44.318 Get All users"},{"id":5,"group":5,"content":"automationapi\/serverest\/features\/update-users[1:6]","start":1764279522419,"end":1764279525319,"title":"automationapi\/serverest\/features\/update-users[1:6] 16:38:42.419-16:38:45.319 Update User existent"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
