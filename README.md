@@ -84,9 +84,14 @@ Ejecutar con Maven:
 ```bash
 mvn clean test 
 ```
-
-```bash
+linux
+```bash linus
 mvn clean test -Dkarate.options="--tags @get-test-01" 
+```
+
+windows
+```bash windows
+mvn clean test "-Dkarate.options=--tags @get-test-01"
 ```
 
 Nota: Los tests se ejecutan correctamente si UsersRunner.java está configurado con la ruta de los feature files, por
